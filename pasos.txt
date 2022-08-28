@@ -1,0 +1,21 @@
+Pasos
+En terminal
+sudo su
+fdisk -l
+#en el listado probablemente aparezca a lo último - aparecen por q de discos rígidos. Puede que sea sdc (1 y 2)
+#si es sdc
+type fdisk /dev/sdc 
+
+d  #delete
+1 #particion 1
+
+n #creamos nueva particion
+p #que sea primaria
+1 # primer particion
+#presionamos enter 2 veces
+w # para escribir
+
+umount /dev/sdc1 (chequear si es sdc1 o como sea...es umount NO UNMOUNT!!!)
+
+POR ULTIMO
+mkfs.vfat -F 32 -n USB /dev/sdc1 -I
